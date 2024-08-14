@@ -32,3 +32,11 @@ jobs:
     steps:
       - name: Executando deploy em dev
         run: echo "Executando deploy em dev"
+
+  deploy_prd:
+    needs: approval
+    runs-on: ubuntu-latest
+    if: github.event.inputs.approve == 'true'
+    steps:
+      - name: Executando deploy em prd
+        run: echo "Executando deploy em prd"
