@@ -34,7 +34,7 @@ jobs:
         run: echo "Executando deploy em dev"
 
   deploy_prd:
-    needs: approval
+    needs: [deploy_dev]
     runs-on: ubuntu-latest
     if: github.event.inputs.approve == 'true'
     steps:
