@@ -14,13 +14,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4.1.7
-
-    - name: Set up JDK 17
-      uses: actions/setup-java@v4
-      with:
-        distribution: 'corretto' 
-        java-version: '17'
-        cache: 'maven'
   
   push-to-ecr:
     name: Build Image
