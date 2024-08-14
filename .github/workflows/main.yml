@@ -17,6 +17,7 @@ jobs:
   
   push-to-ecr:
     name: Build Image
+    needs: [build]
     runs-on: ubuntu-latest
     steps:
       - name: Configure AWS Credentials
@@ -24,6 +25,7 @@ jobs:
   
   deploy_dev:
     name: Deploy dev
+    needs: [build, push-to-ecr]
     runs-on: ubuntu-latest
     steps:
       - name: Executando deploy em dev
