@@ -21,3 +21,10 @@ jobs:
     steps:
       - name: Configure AWS Credentials
         run: echo "Configurando credenciais"
+  
+  deploy_dev:
+    name: Deploy dev
+    runs-on: ubuntu-latest
+    steps:
+      - name: Executando deploy em dev
+        run: echo "Executando deploy em dev"
